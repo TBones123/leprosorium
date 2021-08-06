@@ -1,4 +1,4 @@
-<h2>Latest posts:</h2>
+<h2 xmlns="http://www.w3.org/1999/html">Latest posts:</h2>
 <br/>
 <% @resaults.each do |post| %>
   <p>
@@ -6,6 +6,9 @@
     <br/>
     <br/>
    Added at <%= post['created_date'] %>
+    <br/>
+    <br/>
+    <a href="/post/<%= post['id'] %>">Comments</a>
   </p>
   <hr/>
 <% end %>

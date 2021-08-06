@@ -6,7 +6,7 @@ require 'sqlite3'
 
 def init_db
   @db = SQLite3::Database.new 'leprosorium.db'
-  @db.results_as_hash= true
+  @db.results_as_hash = true
 end
 
 before do
@@ -22,12 +22,10 @@ created_date DATE,
 content TEXT);'
 end
 
-
 get '/' do
   @resaults = @db.execute 'select * from Posts order by id desc'
-	erb :index
+  erb :index
 end
-
 
 get '/new' do
   erb :new
